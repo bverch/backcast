@@ -9,7 +9,7 @@ describe('AppView', function() {
     sinon.spy(Backbone, 'ajax');
 
     view = new AppView();
-    view.videos.reset(fakeVideoData);
+    view.collection.reset(fakeVideoData);
   });
 
   afterEach(function() {
@@ -43,9 +43,9 @@ describe('AppView', function() {
     });
 
     it('should select the first video once new videos are loaded', function() {
-      var model = view.videos.at(0);
+      var model = view.collection.at(0);
       sinon.spy(model, 'select');
-      view.videos.trigger('sync');
+      view.collection.trigger('sync');
       expect(model.select).to.have.been.called;
     });
 

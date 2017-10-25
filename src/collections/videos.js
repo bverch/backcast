@@ -19,7 +19,6 @@ var Videos = Backbone.Collection.extend({
   },
   
   parse: function(response, options) {
-    console.log(response);
     return response.items;
   }
   
