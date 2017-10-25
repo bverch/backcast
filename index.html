@@ -17,7 +17,7 @@
     </h5>
   </div>
 
-
+  <script src="src/config/youtube.js"></script>
   <script src="src/models/video.js"></script>
   <script src="src/collections/videos.js"></script>
   <script src="src/lib/templateUrl.js"></script>
@@ -32,7 +32,8 @@
 
   <script>
     backboneReady(() => {
-      new AppView();
+      var videos = new Videos(exampleVideoData);
+      new AppView({collection: videos});
     });
   </script>
 
